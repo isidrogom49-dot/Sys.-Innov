@@ -25,8 +25,8 @@ body{background:var(--negro);color:var(--blanco);overflow-x:hidden;scroll-behavi
 .nav{display:flex;gap:30px}
 .nav a{text-decoration:none;color:var(--blanco);font-weight:600;position:relative}
 .nav a::after{content:"";position:absolute;height:3px;width:0%;bottom:-5px;left:0;background:var(--verde-suave);transition:.3s;}
-.nav a:hover::after,.nav a.active::after{width:100%;}
-.menu-toggle{font-size:28px;cursor:pointer;display:none;}
+.nav a:hover::after,.nav a.active::after{width:100%}
+.menu-toggle{font-size:28px;cursor:pointer;display:none}
 
 /* HERO ANIMADO */
 .hero-pro-3{position:relative;height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:linear-gradient(135deg,#0f172a,#1f2937)}
@@ -120,7 +120,7 @@ body{background:var(--negro);color:var(--blanco);overflow-x:hidden;scroll-behavi
   letter-spacing: 0.5px;
 }
 
-.footer-grid a {
+.footer-grid a, .footer-grid p {
   display: block;
   color: #cbd5e1;
   text-decoration: none;
@@ -128,42 +128,18 @@ body{background:var(--negro);color:var(--blanco);overflow-x:hidden;scroll-behavi
   transition: color 0.3s, transform 0.3s;
 }
 
-.footer-grid a:hover {
+.footer-grid a:hover, .footer-grid p:hover {
   color: var(--verde-suave);
   transform: translateX(5px);
 }
 
-.footer-icons {
+.footer-contact {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 10px;
+  gap: 8px;
 }
 
-.footer-icons a,
-.footer-icons p {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #cbd5e1;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.footer-icons a i,
-.footer-icons p i {
-  font-size: 20px;
-  color: var(--verde-suave);
-}
-
-.footer-icons a:hover,
-.footer-icons p:hover {
-  color: var(--verde-suave);
-  transform: translateX(5px);
-}
-
-.footer p {
+.footer-copy {
   margin-top: 25px;
   font-weight: 400;
   text-align: center;
@@ -189,13 +165,18 @@ body{background:var(--negro);color:var(--blanco);overflow-x:hidden;scroll-behavi
   .nav a{margin:10px 0}
   .nav.show{display:flex}
   .footer{text-align:center;}
-  .footer-grid{text-align:center;justify-items:center;}
-  .footer-icons a,
-  .footer-icons p{justify-content:center;}
+  .footer-grid{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+  }
+  .footer-links, .footer-social { order: 1; }
+  .footer-contact { order: 2; margin-top:20px; }
 
   /* Ajuste iconos flotantes móviles */
   .whatsapp-float{bottom:25px;right:20px;}
-  .instagram-float{bottom:85px;right:20px;}
+  .instagram-float{bottom:95px;right:20px;}
 }
 
 @media(max-width:480px){
